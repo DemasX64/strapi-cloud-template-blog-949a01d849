@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "debet_cards",
+  "info": {
+    "singularName": "debet-card",
+    "pluralName": "debet-cards",
+    "displayName": "Дебетовые карты",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "info": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact.contact"
+    },
+    "title": {
+      "type": "string"
+    },
+    "cashback": {
+      "type": "string"
+    },
+    "percent": {
+      "type": "string"
+    },
+    "cost": {
+      "type": "string"
+    }
+  }
+}

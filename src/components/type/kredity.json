@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_type_kredity",
+  "info": {
+    "displayName": "Кредиты",
+    "icon": "database"
+  },
+  "options": {},
+  "attributes": {
+    "data": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::credit.credit"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mortgages",
+  "info": {
+    "singularName": "mortgage",
+    "pluralName": "mortgages",
+    "displayName": "Ипотеки"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url": {
+      "type": "string"
+    }
+  }
+}

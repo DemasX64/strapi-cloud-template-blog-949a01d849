@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_type_kreditnye_karty",
+  "info": {
+    "displayName": "Кредитные карты",
+    "icon": "house"
+  },
+  "options": {},
+  "attributes": {
+    "data": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::credit-card.credit-card"
+    }
+  }
+}

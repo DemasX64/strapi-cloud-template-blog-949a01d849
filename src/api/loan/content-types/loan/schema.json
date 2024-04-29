@@ -12,21 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "logo": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "title": {
       "type": "string"
     },
     "url": {
       "type": "string"
     },
-    "contacts": {
+    "info": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::contact.contact"

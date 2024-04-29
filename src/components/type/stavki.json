@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_type_stavki",
+  "info": {
+    "displayName": "Ставки",
+    "icon": "bold"
+  },
+  "options": {},
+  "attributes": {
+    "data": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bet.bet"
+    }
+  }
+}

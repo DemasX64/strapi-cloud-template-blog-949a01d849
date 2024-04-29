@@ -794,12 +794,22 @@ export interface ApiAppApp extends Schema.CollectionType {
     singularName: 'app';
     pluralName: 'apps';
     displayName: '\u041F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u044F';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     package: Attribute.String;
+    data: Attribute.DynamicZone<
+      [
+        'type.zajmy',
+        'type.debetovye-karty',
+        'type.kredity',
+        'type.kreditnye-karty',
+        'type.stavki'
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -810,12 +820,40 @@ export interface ApiAppApp extends Schema.CollectionType {
   };
 }
 
+export interface ApiBetBet extends Schema.CollectionType {
+  collectionName: 'bets';
+  info: {
+    singularName: 'bet';
+    pluralName: 'bets';
+    displayName: '\u0421\u0442\u0430\u0432\u043A\u0438';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    url: Attribute.String;
+    title: Attribute.String;
+    freebet: Attribute.Integer;
+    logo: Attribute.Media;
+    banner: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::bet.bet', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::bet.bet', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiContactContact extends Schema.CollectionType {
   collectionName: 'contacts';
   info: {
     singularName: 'contact';
     pluralName: 'contacts';
     displayName: '\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -825,6 +863,7 @@ export interface ApiContactContact extends Schema.CollectionType {
     license: Attribute.String;
     inn: Attribute.String;
     contacts: Attribute.String;
+    logo: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -843,6 +882,147 @@ export interface ApiContactContact extends Schema.CollectionType {
   };
 }
 
+export interface ApiCreditCredit extends Schema.CollectionType {
+  collectionName: 'credits';
+  info: {
+    singularName: 'credit';
+    pluralName: 'credits';
+    displayName: '\u041A\u0440\u0435\u0434\u0438\u0442\u044B';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    url: Attribute.String;
+    time: Attribute.Integer;
+    max_sum: Attribute.Integer;
+    info: Attribute.Relation<
+      'api::credit.credit',
+      'oneToOne',
+      'api::contact.contact'
+    >;
+    title: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::credit.credit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::credit.credit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCreditCardCreditCard extends Schema.CollectionType {
+  collectionName: 'credit_cards';
+  info: {
+    singularName: 'credit-card';
+    pluralName: 'credit-cards';
+    displayName: '\u041A\u0440\u0435\u0434\u0438\u0442\u043D\u044B\u0435 \u043A\u0430\u0440\u0442\u044B';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    url: Attribute.String;
+    title: Attribute.String;
+    info: Attribute.Relation<
+      'api::credit-card.credit-card',
+      'oneToOne',
+      'api::contact.contact'
+    >;
+    grace: Attribute.Integer;
+    max_sum: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::credit-card.credit-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::credit-card.credit-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDebetCardDebetCard extends Schema.CollectionType {
+  collectionName: 'debet_cards';
+  info: {
+    singularName: 'debet-card';
+    pluralName: 'debet-cards';
+    displayName: '\u0414\u0435\u0431\u0435\u0442\u043E\u0432\u044B\u0435 \u043A\u0430\u0440\u0442\u044B';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    url: Attribute.String;
+    info: Attribute.Relation<
+      'api::debet-card.debet-card',
+      'oneToOne',
+      'api::contact.contact'
+    >;
+    title: Attribute.String;
+    cashback: Attribute.String;
+    percent: Attribute.String;
+    cost: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::debet-card.debet-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::debet-card.debet-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiJobJob extends Schema.CollectionType {
+  collectionName: 'jobs';
+  info: {
+    singularName: 'job';
+    pluralName: 'jobs';
+    displayName: '\u0420\u0430\u0431\u043E\u0442\u0430';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    url: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::job.job', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::job.job', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLoanLoan extends Schema.CollectionType {
   collectionName: 'loans';
   info: {
@@ -855,10 +1035,9 @@ export interface ApiLoanLoan extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    logo: Attribute.Media & Attribute.Required;
     title: Attribute.String;
     url: Attribute.String;
-    contacts: Attribute.Relation<
+    info: Attribute.Relation<
       'api::loan.loan',
       'oneToOne',
       'api::contact.contact'
@@ -910,6 +1089,36 @@ export interface ApiMatchiMatchi extends Schema.SingleType {
   };
 }
 
+export interface ApiMortgageMortgage extends Schema.CollectionType {
+  collectionName: 'mortgages';
+  info: {
+    singularName: 'mortgage';
+    pluralName: 'mortgages';
+    displayName: '\u0418\u043F\u043E\u0442\u0435\u043A\u0438';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    url: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::mortgage.mortgage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::mortgage.mortgage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -929,9 +1138,15 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::app.app': ApiAppApp;
+      'api::bet.bet': ApiBetBet;
       'api::contact.contact': ApiContactContact;
+      'api::credit.credit': ApiCreditCredit;
+      'api::credit-card.credit-card': ApiCreditCardCreditCard;
+      'api::debet-card.debet-card': ApiDebetCardDebetCard;
+      'api::job.job': ApiJobJob;
       'api::loan.loan': ApiLoanLoan;
       'api::matchi.matchi': ApiMatchiMatchi;
+      'api::mortgage.mortgage': ApiMortgageMortgage;
     }
   }
 }

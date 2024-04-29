@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_type_debetovye_karty",
+  "info": {
+    "displayName": "Дебетовые карты",
+    "icon": "key"
+  },
+  "options": {},
+  "attributes": {
+    "data": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::debet-card.debet-card"
+    }
+  }
+}

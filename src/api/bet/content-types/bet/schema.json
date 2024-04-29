@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "contacts",
+  "collectionName": "bets",
   "info": {
-    "singularName": "contact",
-    "pluralName": "contacts",
-    "displayName": "Контакты",
+    "singularName": "bet",
+    "pluralName": "bets",
+    "displayName": "Ставки",
     "description": ""
   },
   "options": {
@@ -12,19 +12,23 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "url": {
+      "type": "string"
+    },
     "title": {
       "type": "string"
     },
-    "license": {
-      "type": "string"
-    },
-    "inn": {
-      "type": "string"
-    },
-    "contacts": {
-      "type": "string"
+    "freebet": {
+      "type": "integer"
     },
     "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "banner": {
       "allowedTypes": [
         "images"
       ],

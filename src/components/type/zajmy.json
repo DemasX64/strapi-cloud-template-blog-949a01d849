@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_type_zajmy",
+  "info": {
+    "displayName": "Займы",
+    "icon": "handHeart",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "data": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::loan.loan"
+    }
+  }
+}

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "app",
     "pluralName": "apps",
-    "displayName": "Приложения"
+    "displayName": "Приложения",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,16 @@
   "attributes": {
     "package": {
       "type": "string"
+    },
+    "data": {
+      "type": "dynamiczone",
+      "components": [
+        "type.zajmy",
+        "type.debetovye-karty",
+        "type.kredity",
+        "type.kreditnye-karty",
+        "type.stavki"
+      ]
     }
   }
 }
