@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "matchis",
+  "info": {
+    "singularName": "matchi",
+    "pluralName": "matchis",
+    "displayName": "Матчи"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "data": {
+      "type": "json"
+    }
+  }
+}

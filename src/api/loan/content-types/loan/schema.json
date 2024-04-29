@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "loans",
+  "info": {
+    "singularName": "loan",
+    "pluralName": "loans",
+    "displayName": "Займы",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "contacts": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact.contact"
+    },
+    "min_time": {
+      "type": "integer"
+    },
+    "max_time": {
+      "type": "integer"
+    },
+    "min_value": {
+      "type": "integer"
+    },
+    "max_value": {
+      "type": "integer"
+    },
+    "min_age": {
+      "type": "integer"
+    },
+    "max_age": {
+      "type": "integer"
+    },
+    "hint": {
+      "type": "string"
+    }
+  }
+}
