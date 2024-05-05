@@ -32,15 +32,8 @@
         "images"
       ]
     },
-    "address": {
+    "label": {
       "type": "string"
-    },
-    "small_logo": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
     }
   }
 }
