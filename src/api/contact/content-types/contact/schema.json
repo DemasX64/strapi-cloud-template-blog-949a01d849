@@ -34,6 +34,16 @@
     },
     "label": {
       "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "small_logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

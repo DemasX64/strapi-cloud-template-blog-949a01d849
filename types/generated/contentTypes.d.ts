@@ -865,6 +865,8 @@ export interface ApiContactContact extends Schema.CollectionType {
     contacts: Attribute.String;
     logo: Attribute.Media;
     label: Attribute.String;
+    address: Attribute.String;
+    small_logo: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
